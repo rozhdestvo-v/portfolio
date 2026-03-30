@@ -92,8 +92,16 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection = 'home' }) => {
         >
           <span className="absolute inset-[-2px] rounded-full accent-gradient animate-gradient-shift opacity-0 group-hover:opacity-100 transition-opacity" />
           <span className="relative bg-surface rounded-full backdrop-blur-md px-3 sm:px-4 py-1.5 sm:py-2 text-muted group-hover:text-text-primary transition-colors inline-flex items-center gap-1">
-            {t('sayHi')}
-            <span className="text-muted">↗</span>
+            <span className="hidden sm:inline-flex items-center gap-1">
+              {t('sayHi')}
+              <span className="text-muted">↗</span>
+            </span>
+            <span className="sm:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </span>
           </span>
         </a>
       </div>

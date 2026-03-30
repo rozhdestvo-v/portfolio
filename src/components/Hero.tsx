@@ -104,7 +104,7 @@ const Hero: React.FC = () => {
 
         <h1
           ref={nameRef}
-          className="text-6xl md:text-8xl lg:text-9xl font-display italic leading-[0.9] tracking-tight text-text-primary mb-6 name-reveal"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-9xl font-display italic leading-[0.9] tracking-tight text-text-primary mb-6 name-reveal"
         >
           {language === 'ru' ? 'Владислав Рождественский' : 'Vladislav Rozhdestvenskiy'}
         </h1>

@@ -9,8 +9,8 @@ const Stats: React.FC = () => {
   const [counts, setCounts] = useState([0, 0, 0]);
 
   const stats = useMemo(() => [
-    { value: 20, suffix: '+', label: t('yearsExperience') },
-    { value: 95, suffix: '+', label: t('projectsDone') },
+    { value: 3, suffix: '+', label: t('yearsExperience') },
+    { value: 15, suffix: '+', label: t('projectsDone') },
     { value: 200, suffix: '%', label: t('satisfiedClients') },
   ], [t]);
 

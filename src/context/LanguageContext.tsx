@@ -35,7 +35,7 @@ const translations: Translation = {
   },
   seeWorks: { ru: 'Смотреть работы', en: 'See Works' },
   reachOut: { ru: 'Написать мне...', en: 'Reach out...' },
-  scroll: { ru: 'ПРОКРУТИТЬ', en: 'SCROLL' },
+  scroll: { ru: 'ПРОКРУТИ', en: 'SCROLL' },
   
   // Selected Works
   selectedWork: { ru: 'Избранные работы', en: 'Selected Work' },
@@ -77,7 +77,7 @@ const translations: Translation = {
   followDribbble: { ru: 'Dribbble', en: 'Follow on Dribbble' },
   
   // Stats
-  yearsExperience: { ru: 'Лет опыта', en: 'Years Experience' },
+  yearsExperience: { ru: 'Года опыта', en: 'Years Experience' },
   projectsDone: { ru: 'Проектов выполнено', en: 'Projects Done' },
   satisfiedClients: { ru: 'Довольных клиентов', en: 'Satisfied Clients' },
   
