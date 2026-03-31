@@ -28,7 +28,7 @@ const interiorList = [
   Wardrobe,
 ]
 
-export default {
+const interiorExports = {
   Gym,
   Living_Room_1,
   Living_Room_2,
@@ -44,3 +44,5 @@ export default {
   Wardrobe,
   interiorList,
 }
+
+export default interiorExports

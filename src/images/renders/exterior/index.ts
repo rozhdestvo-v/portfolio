@@ -54,7 +54,7 @@ const exteriorList = [
   Villa_Evening_5_side
 ]
 
-export default {
+const exteriorExports = {
   villa_side_3,
   Villas_Street_Evening,
   Villa_Side_View_4,
@@ -83,3 +83,5 @@ export default {
   Villa_Evening_5_side,
   exteriorList,
 }
+
+export default exteriorExports
