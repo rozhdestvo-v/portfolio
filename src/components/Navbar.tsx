@@ -20,7 +20,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection = 'home' }) => {
 
   const navLinks = [
     { key: 'home', label: t('home'), href: '#home' },
-    { key: 'work', label: t('work'), href: '#work' },
+    { key: 'work', label: t('work'), href: '/works' },
     // { key: 'resume', label: t('resume'), href: '#resume' },
   ];
 

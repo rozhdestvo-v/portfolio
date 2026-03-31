@@ -1,34 +1,36 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
+import itmo from '../images/logos/logo_osnovnoy_russkiy_belyy.png'
+import innotech from '../images/logos/t1_logo_white.png'
 
 const Journal: React.FC = () => {
   const { t } = useLanguage();
 
-  const journalEntries = [
+  const experience = [
     {
-      title: t('journalEntry1'),
-      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&q=80',
-      readTime: '5' + t('minRead'),
-      date: 'Mar 15, 2026',
+      icon: innotech,
+      title: t('position1'),
+      company: t('company1'),
+      period: t('period1'),
+      description: t('description1'),
+    },
+  ];
+
+  const education = [
+    {
+      icon: itmo,
+      title: t('degree2'),
+      school: t('school2'),
+      period: t('period5'),
+      description: t('description5'),
     },
     {
-      title: t('journalEntry2'),
-      image: 'https://images.unsplash.com/photo-1586717791821-3f44a5638d48?w=400&q=80',
-      readTime: '7' + t('minRead'),
-      date: 'Mar 10, 2026',
-    },
-    {
-      title: t('journalEntry3'),
-      image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&q=80',
-      readTime: '6' + t('minRead'),
-      date: 'Mar 5, 2026',
-    },
-    {
-      title: t('journalEntry4'),
-      image: 'https://images.unsplash.com/photo-1550439062-609e1531270e?w=400&q=80',
-      readTime: '4' + t('minRead'),
-      date: 'Feb 28, 2026',
+      icon: itmo,
+      title: t('degree1'),
+      school: t('school1'),
+      period: t('period4'),
+      description: t('description4'),
     },
   ];
 
@@ -49,7 +51,7 @@ const Journal: React.FC = () => {
           <div className="flex items-center gap-3 mb-4">
             <div className="w-8 h-px bg-stroke" />
             <span className="text-xs text-muted uppercase tracking-[0.3em]">
-              {t('recentThoughts')}
+              {t('resume')}
             </span>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-display italic text-text-primary mb-4">
@@ -58,53 +60,88 @@ const Journal: React.FC = () => {
           <p className="text-muted max-w-md mb-6">
             {t('journalDescription')}
           </p>
-          <a
-            href="#journal"
-            className="hidden md:inline-flex relative rounded-full overflow-hidden group"
-          >
-            <span className="absolute inset-[-2px] rounded-full accent-gradient opacity-0 group-hover:opacity-100 transition-opacity" />
-            <span className="relative bg-surface border border-stroke text-text-primary px-5 py-2.5 rounded-full inline-flex items-center gap-2 group-hover:border-transparent transition-colors">
-              {t('viewAllPosts')}
-              <span>→</span>
-            </span>
-          </a>
         </motion.div>
 
-        {/* Journal Entries */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {journalEntries.map((entry, index) => (
-            <motion.a
-              key={entry.title}
-              href="#journal"
-              className="flex items-center gap-4 sm:gap-6 p-4 bg-surface/30 hover:bg-surface border border-stroke rounded-[40px] sm:rounded-full transition-colors group cursor-pointer"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden flex-shrink-0">
-                <img
-                  src={entry.image}
-                  alt={entry.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-              </div>
-              <div className="flex-1 min-w-0">
-                <h3 className="text-sm sm:text-base text-text-primary font-medium truncate group-hover:text-muted transition-colors">
-                  {entry.title}
-                </h3>
-                <p className="text-xs text-muted mt-1">
-                  {entry.readTime} • {entry.date}
-                </p>
-              </div>
-              <div className="w-8 h-8 rounded-full border border-stroke flex items-center justify-center group-hover:border-text-primary transition-colors">
-                <span className="text-muted group-hover:text-text-primary text-sm">
-                  →
+        {/* Experience Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="mb-16"
+        >
+          <h3 className="text-2xl md:text-3xl font-display italic text-text-primary mb-8">
+            {t('experience')}
+          </h3>
+          <div className="space-y-2">
+            {experience.map((item, index) => (
+              <motion.div
+                key={item.title}
+                className="flex items-baseline gap-4 py-3 border-b border-stroke last:border-0 flex-wrap md:flex-nowrap"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <img src={item.icon} alt="" className="w-8 h-8 object-contain flex-shrink-0 self-center" />
+                <div className="flex-1 min-w-0">
+                  <h4 className="text-base text-text-primary font-medium break-words">
+                    {item.title}
+                  </h4>
+                  <p className="text-sm text-muted break-words">
+                    {item.description}
+                  </p>
+                </div>
+                <span className="text-xs text-muted flex-shrink-0 whitespace-normal md:whitespace-nowrap">
+                  {item.period}
                 </span>
-              </div>
-            </motion.a>
-          ))}
-        </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Divider */}
+        <div className="w-full h-px bg-stroke mb-16" />
+
+        {/* Education Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <h3 className="text-2xl md:text-3xl font-display italic text-text-primary mb-8">
+            {t('education')}
+          </h3>
+          <div className="space-y-2">
+            {education.map((item, index) => (
+              <motion.div
+                key={item.title}
+                className="flex items-baseline gap-4 py-3 border-b border-stroke last:border-0 flex-wrap md:flex-nowrap"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <img src={item.icon} alt="" className="w-8 h-8 object-contain flex-shrink-0 self-center" />
+                <div className="flex-1 min-w-0">
+                  <h4 className="text-base text-text-primary font-medium break-words">
+                    {item.title}
+                  </h4>
+                  <p className="text-sm text-muted break-words">
+                    {item.school}
+                  </p>
+                  {/* <p className="text-sm text-muted truncate">
+                    {item.description}
+                  </p> */}
+                </div>
+                <span className="text-xs text-muted flex-shrink-0 whitespace-normal md:whitespace-nowrap">
+                  {item.period}
+                </span>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

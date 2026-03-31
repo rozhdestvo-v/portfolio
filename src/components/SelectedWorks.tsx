@@ -1,34 +1,25 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
+import exterior from '../images/renders/exterior';
 
 const SelectedWorks: React.FC = () => {
   const { t } = useLanguage();
 
   const projects = [
     {
+      title: t('projectBrand'),
+      image: exterior.villas_4_of_5,
+      span: 'col-span-1 md:col-span-6',
+      aspect: 'aspect-[4/3]',
+      link: '/works'
+    },
+    {
       title: t('projectWebDev'),
       image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80',
-      span: 'col-span-1 md:col-span-7',
+      span: 'col-span-1 md:col-span-6',
       aspect: 'aspect-[4/3]',
-    },
-    {
-      title: t('projectMobileApps'),
-      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80',
-      span: 'col-span-1 md:col-span-5',
-      aspect: 'aspect-square',
-    },
-    {
-      title: t('projectUiUx'),
-      image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80',
-      span: 'col-span-1 md:col-span-5',
-      aspect: 'aspect-square',
-    },
-    {
-      title: t('projectBrand'),
-      image: 'https://images.unsplash.com/photo-1600607686527-6fb886090705?w=800&q=80',
-      span: 'col-span-1 md:col-span-7',
-      aspect: 'aspect-[4/3]',
+      link: '/works'
     },
   ];
 
@@ -53,12 +44,12 @@ const SelectedWorks: React.FC = () => {
             </span>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-display italic text-text-primary mb-4">
-            Featured <span className="italic">{t('featuredProjects')}</span>
+            <span className="italic">{t('featuredProjects')}</span>
           </h2>
           <p className="text-muted max-w-md mb-6">
             {t('featuredText')}
           </p>
-          <a
+          {/* <a
             href="#work"
             className="hidden md:inline-flex relative rounded-full overflow-hidden group"
           >
@@ -67,7 +58,7 @@ const SelectedWorks: React.FC = () => {
               {t('viewAllWork')}
               <span>→</span>
             </span>
-          </a>
+          </a> */}
         </motion.div>
 
         {/* Bento Grid */}
@@ -93,14 +84,17 @@ const SelectedWorks: React.FC = () => {
               <div className="absolute inset-0 halftone-overlay" />
 
               {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-bg/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-lg flex items-center justify-center">
-                <div className="relative inline-flex items-center gap-2 px-5 py-2.5 rounded-full overflow-hidden">
-                  <span className="absolute inset-0 accent-gradient animate-gradient-shift" />
-                  <span className="relative bg-white text-bg px-4 py-2 rounded-full inline-flex items-center gap-2 text-sm">
-                    {t('viewProject')}<span className="font-display italic">{project.title}</span>
-                  </span>
+              
+                <div className="absolute inset-0 bg-bg/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-lg flex items-center justify-center">
+                  <div className="relative inline-flex items-center gap-2 px-5 py-2.5 rounded-full overflow-hidden">
+                    <a href={project.link}>
+                    <span className="absolute inset-0 accent-gradient animate-gradient-shift" />
+                    <span className="relative bg-white text-bg px-4 py-2 rounded-full inline-flex items-center gap-2 text-sm">
+                      {t('viewProject')}<span className="font-display italic">{project.title}</span>
+                    </span></a>
+                  </div>
                 </div>
-              </div>
+              
             </motion.div>
           ))}
         </div>

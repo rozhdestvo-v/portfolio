@@ -7,7 +7,6 @@ const socialLinks = [
   { name: 'GitHub', url: 'https://github.com/rozhdestvo-v' },
   { name: 'Telegram', url: 'https://t.me/rozhdestvo_v' },
   { name: 'Vk', url: 'https://vk.com/rozhdestvo_v' },
-  // { name: 'Dribbble', url: 'https://dribbble.com' },
 ];
 
 const Contact: React.FC = () => {
